@@ -1,13 +1,9 @@
-pip install langchain langchain_community Llama_cpp_python
 import streamlit as st
-
-st.title("Medical Code Chatbot")
-question = st.text_input("Question", key="input1", placeholder="Type your question here", help="Enter your medical question here.")
-
 from langchain_community.llms import LlamaCpp
 from langchain.prompts import PromptTemplate
 from langchain.chains import LLMChain
 
+# Initialize the LlamaCpp model
 llm = LlamaCpp(
     model_path="downloads/llama-2-7b-chat.Q4_0.gguf",
     n_gpu_layers=40,
@@ -15,6 +11,7 @@ llm = LlamaCpp(
     verbose=False
 )
 
+# Define the prompt template
 template = """
 Question: {question}
 
@@ -22,7 +19,16 @@ Answer:
 """
 prompt = PromptTemplate(template=template, input_variables=["question"])
 
+# Create an LLM chain with the prompt and the LLM
 llm_chain = LLMChain(prompt=prompt, llm=llm)
-print("Chatbot initialized, ready to chat...")
-while True:
-    answer = st.text_input(llm_chain.run(question), key="input2", placeholder="Answer will appear here", help="The answer to your question will be displayed here.")
+
+# Streamlit application
+st.title("Medical Code Chatbot")
+
+# Input for the user's question
+question = st.text_input("Question", key="input1", placeholder="Type your question here", help="Enter your medical question here.")
+
+# Display the answer when the question is submitted
+if question:
+    answer = llm_chain.run(question)
+    st.text_area("Answer", value=answer, key="input2", placeholder="Answer will appear here", help="The answer to your question will be displayed here.", height=200)
