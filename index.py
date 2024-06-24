@@ -6,8 +6,8 @@ st.markdown(
     """
     <style>
     .reportview-container {
-        background: black;
-        color: white;
+        background: white;
+        color: black;
     }
     .sidebar .sidebar-content {
         background: black;
