@@ -7,7 +7,7 @@ st.markdown(
     <style>
     body {
         background-color: black;
-        color: white;
+        color: black;
     }
     .stTextInput>div>div>input {
         color: white;
