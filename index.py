@@ -4,7 +4,7 @@ from langchain.prompts import PromptTemplate
 from langchain.chains import LLMChain
 
 llm = LlamaCpp(
-    model_path="downloads/llama-2-7b-chat.Q4_0.gguf",
+    model_path="llama-2-7b-chat.Q4_0.gguf",
     n_gpu_layers=40,
     n_batch=512,
     verbose=False
