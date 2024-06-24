@@ -5,9 +5,12 @@ import base64
 st.markdown(
     """
     <style>
-    body {
-        background-color: black;
-        color: black;
+    .reportview-container {
+        background: black;
+        color: white;
+    }
+    .sidebar .sidebar-content {
+        background: black;
     }
     .stTextInput>div>div>input {
         color: white;
