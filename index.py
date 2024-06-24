@@ -1,5 +1,4 @@
 import streamlit as st
-import base64
 
 st.title("Medical Code Chatbot")
 question = st.text_input("Question", key="input1", placeholder="Type your question here", help="Enter your medical question here.")
