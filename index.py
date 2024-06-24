@@ -1,3 +1,4 @@
+pip install langchain langchain_community Llama_cpp_python
 import streamlit as st
 
 st.title("Medical Code Chatbot")
