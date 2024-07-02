@@ -76,10 +76,6 @@ The application uses a language model from the `langchain_community` package, sp
 
 When a user asks a question, the application retrieves relevant information from the PDF vector store and generates an answer using a predefined prompt template. The answer is then displayed in the interface.
 
-## License
-
-This project is licensed under the MIT License.
-
 ## Acknowledgements
 
 - [Streamlit](https://streamlit.io/)
